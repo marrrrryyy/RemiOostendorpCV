@@ -1,0 +1,292 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    /* font-family: 'Oxygen', sans-serif; */
+    font-family: 'Aleo', serif;
+    
+}
+h1,
+h2,
+h3,
+.collapsible {
+    font-family: 'Aleo', sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    }
+
+h1 {
+    font-size: xx-large;
+}
+h2 {
+    font-size: x-large;
+}
+h3 {
+    font-size: large;
+}
+p,
+ul,
+li,
+a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+    color: white;
+    
+}
+.divider {
+    border-top: 3px solid white;
+    width: 90%;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    background-color: pink;
+    width: 20%;
+    height: 84%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    left: 2%;
+    position: fixed;
+    border-radius: 15px;
+    text-align: center;
+    padding: 50px;
+    
+}
+header img {
+    border-radius: 50%;
+    width: 80%;
+}
+header i {
+    font-size: 2em;
+    color: white;
+}
+.all-boxes {
+    /* background-color: #d6d6d6; */
+    width: 60%;
+    height: 90%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    left: 18%;
+    position: relative;
+}
+.combi-box {
+    /* background-color: purple; */
+    width: 80%;
+    min-height: 10%;
+    display: flex;
+    padding: 1%;
+    margin: 2%;
+}
+/* .dot-box {
+    background-color: rebeccapurple;
+    flex: 1;
+} */
+.text-box {
+    /* background-color: royalblue; */
+    flex: 10;
+    font-size: x-large;
+}
+
+
+/* collapsible button dropdown */
+.collapsible {
+    background-color: #d6d6d6;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    outline: none;
+    margin: 6%;
+    
+    
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #ffccdf;
+    /* border-style: solid; */
+    border-color: white;
+    color: white;
+    margin: 0%;
+    font-weight: bold;
+    font-size: xx-large;
+    text-shadow: 1px 1px #d6d6d6
+
+
+  }
+  .collapsible:hover {
+    
+    box-shadow: 2px 2px #88888875;
+
+  }
+  .active {
+    border-radius: 5px;
+    
+  }
+  
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #d6d6d6;
+    transition: max-height 0.2s ease-out;
+    border-radius: 5px;
+    box-shadow: 2px 2px #88888875;
+    color: white;
+  }
+  /* end collapsible button dropdown */
+
+  /* animated dot */
+  @keyframes fade {
+    0%, 50% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+@keyframes dot-anim {
+    0% {
+        top: -1vw;
+    }
+    50% {
+        top: 1vw;
+    }
+    100% {
+        top: -1vw;
+    }
+}
+.animated-dot:before, 
+.animated-dot:after {
+    margin: auto;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+.container-radio,
+.animated-dot, 
+.animated-dot:before, 
+.animated-dot:after {
+    position: relative;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.main-radio {
+    width: 10%;
+    height: 10%;
+}
+.container-radio {
+    animation: fade 1s;
+}
+
+    .animated-dot {
+    background-color: #ffccdf;
+    display: inline-block;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1.6s;
+    animation-name: dot-anim;
+}
+.radio:checked + .animated-dot {
+    animation-play-state: paused;
+}
+
+.animated-dot:before {
+    content: "";
+    position: absolute;
+    width: 1.25vw;
+    height: 1.25vw;
+    background: white;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0 0 .2vw 0, rgba(0, 0, 0, 0.239216) 0 .2vw .2vw 0;
+    transition: all .2s;
+}
+.animated-dot:hover:before {
+    box-shadow: rgba(0, 0, 0, 0.0784314) 0 0 0.25vw 0, rgba(0, 0, 0, 0.239216) 0 0.25vw 0.25vw 0;
+}
+.animated-dot:after {
+    content: "";
+    position: absolute;
+    width: 2.5vw;
+    height: 2.5vw;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    transform: scale(0);
+}
+.radio:checked + .animated-dot:after {
+    background: transparent;
+    transition: all .5s;
+    transform: scale(1);
+}
+/* #radio-1 + .animated-dot {
+    left: -5vw;
+    background: #ffccdf;
+    border-color: #ffccdf!important;
+    animation-delay: .2s;
+}
+#radio-1:checked + .animated-dot {
+    background: white;
+    border: 0.25vw solid;
+    box-shadow: inset rgba(0, 0, 0, 0.117647) 0 0 .15vw 0, inset rgba(0, 0, 0, 0.239216) 0 .15vw .2vw 0;
+    transition: all .2s;
+}
+#radio-1:checked + .animated-dot:before {
+    width: 1.25vw;
+    height: 1.25vw;
+    background: #ffccdf;
+    transition: all .4s;
+}
+/* for IE 
+#radio-1:not(:checked) + .animated-dot:before {
+    width: 2vw;
+    height: 2vw;
+    background: #ffccdf;
+    box-shadow: none;
+} */
+
+.radio + .animated-dot {
+    left: -5vw;
+    background: #ffccdf;
+    border-color: #ffccdf!important;
+    animation-delay: .2s;
+}
+.radio:checked + .animated-dot {
+    background: white;
+    border: 0.25vw solid;
+    box-shadow: inset rgba(0, 0, 0, 0.117647) 0 0 .15vw 0, inset rgba(0, 0, 0, 0.239216) 0 .15vw .2vw 0;
+    transition: all .2s;
+}
+.radio:checked + .animated-dot:before {
+    width: 1.25vw;
+    height: 1.25vw;
+    background: #ffccdf;
+    transition: all .4s;
+}
+/* for IE */
+.radio:not(:checked) + .animated-dot:before {
+    width: 2vw;
+    height: 2vw;
+    background: #ffccdf;
+    box-shadow: none;
+}
+
+[type="radio"] {
+    display: none;
+}
+ 
+
